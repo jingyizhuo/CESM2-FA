@@ -1,6 +1,6 @@
-# CESM2-FA
+# Welcome to CESM2-FA Docs
 
-A tutorial on applying flux adjustments to a fully coupled climate model (**CESM2**) to develop its flux-adjusted version (**CESM2-FA**).
+This is the documentation for **CESM2-FA**, which is the flux adjusted version of a fully coupled climate model (**CESM2**).
 
 ## 🔗 Resources
 
