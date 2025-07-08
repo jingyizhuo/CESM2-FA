@@ -13,11 +13,11 @@ After completing the SST nudging simulations, the model output is compared to ob
 
 ### 2️⃣ Step 2: Add wind stress adjustment while applying SST nudging, and save ```SST_ADJUST```
 
-With ```TAU_ADJUST``` applied in CESM2, the model will evolve toward a new mean climatological state. Step 2 aim to obtain the climatological SST adjustment when ```TAU_ADJUST`` is applied. 
+With ```TAU_ADJUST``` applied in CESM2, the model will evolve toward a new mean climatological state. Step 2 aim to obtain the climatological SST adjustment when ```TAU_ADJUST``` is applied. 
 
 Assuming your ```TAU_ADJUST``` data from Step 1 have been saved at /my/cesm2fa_data/tau/, then you will need to copy the necessary source code modifications into your POP SourceMods directory. Similar to Step 1, this involves modifying four POP Fortran source files: ```forcing_coupled.F90```; ```forcing.F90```; ```forcing_sfwf.F90```; ```forcing_shf.90```. In addition, you must update the POP namelist definitions file: ```namelist_definition_pop.xml```. All these files can be found [here](https://github.com/jingyizhuo/CESM2-FA/tree/main/code/cesmfa_step2).
 
-Unlike in Step 1, where the wind stress adjustments are diagnosed after completing the simulation, ```SST_ADJUST``` is calculated by taking the climatological mean of the SST nudging tendency term (```HEAT_F```) saved during the model run. ```HEAT_F``` is not a default output of POP, I've modify ```forcing_coupled.F90``` accordingly to save this variable. Make sure to include HEAT_F in your ```gx1v7_tavg_contents``` file to ensure it is properly written to the output.
+Unlike in Step 1, where the wind stress adjustments are diagnosed after completing the simulation, ```SST_ADJUST``` is calculated by taking the climatological mean of the SST nudging tendency term (```HEAT_F```) saved during the model run. ```HEAT_F``` is not a default output of POP, I've modify ```forcing_coupled.F90``` accordingly to save this variable. Just make sure to include ```HEAT_F``` in your ```gx1v7_tavg_contents``` file to ensure it is properly written to the output.
 
 
 
