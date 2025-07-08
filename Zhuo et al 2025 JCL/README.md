@@ -3,6 +3,6 @@
 
 ⚠️ Note: The original paper used five CESM2-FA ensemble members, which included some errors in the SSP5-8.5 simulations after 2015. These errors have been corrected. **The ensemble-mean SST trend pattern between CESM2-FA and CESM2 remains largely unchanged between the original and corrected data**. However, the tropical Pacific SST trend indices (W–E and N–S indices used in the paper) are sensitive to these corrections. An updated scatter plot of tropical Pacific SST trend indices reflecting these changes is included in the [Jupyter notebook](https://github.com/jingyizhuo/CESM2-FA/blob/main/Zhuo%20et%20al%202025%20JCL/sst_trend_pattern_index.ipynb).
 
-📬 The original datasets are available upon request. Please contact [Jingyi](mailto:jz4351@princeton.edu) for access or additional information.
+📬 The CESM2 and CESM2-FA datasets are available upon request. Please contact [Jingyi](mailto:jz4351@princeton.edu) for access or additional information.
 
 
