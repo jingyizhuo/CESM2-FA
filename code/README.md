@@ -3,6 +3,8 @@
 
 This page describes how to set up surface flux adjustment experiments using the fully coupled CESM2 as an example. The source code modifications provided here are specific to CESM2. If you wish to apply flux adjustments to CESM1 or other GCMs, the overall logic remains the same, but you will need to implement your own version of the source code modifications.
 
+---
+
 ### 1️⃣ Step 1: Apply SST nudging, and save ```TAU_ADJUST```
 
 The first step is to apply SST nudging or the pacemaker technique. This allows you to diagnose and save the surface wind stress adjustments (```TAU_ADJUST``` ) needed for correcting surface momentum fluxes.
@@ -25,6 +27,8 @@ Unlike in Step 1, where the wind stress adjustments are diagnosed after completi
 Now, with the derived wind stress and sst adjustments, you will also need to modify your source codes, namelists and xml parameters, then finally build and submit your case as normal. 
 
 The source codes for Step 3 can be found at [cesm2fa_step3](https://github.com/jingyizhuo/CESM2-FA/tree/main/code/cesm2fa_step3). 
+
+---
 
 Citation: Zhuo, J.-Y., C. Lee, A. Sobel, R. Seager, S. J. Camargo, Y. Lin, B. Fosu, and K. A. Reed, 2025: A More La Niña–Like Response to Radiative Forcing after Flux Adjustment in CESM2. *J. Climate*, **38**, 1037–1050, https://doi.org/10.1175/JCLI-D-24-0331.1
 
