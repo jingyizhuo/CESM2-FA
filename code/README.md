@@ -9,6 +9,14 @@ The first step is to apply SST nudging or the pacemaker technique. This allows y
 
 In my case, I followed the [CESM2 Pacemaker Tutorial](https://www.cesm.ucar.edu/working-groups/climate/simulations/cesm2-pacific-pacemaker/instructions) to implement SST nudging. The [tutorial](https://www.cesm.ucar.edu/working-groups/climate/simulations/cesm2-pacific-pacemaker/instructions) provides guidance on how to generate a custom nudging mask. In our JCL2025 paper, we applied SST nudging over the entire tropical band (30°S–30°N), you can define your own nudging region based on your specific research goals. Then you will need to prepare the SST forcing data, apply source code modifications, set up POP namelist, and then set up and build your case. Please just follow the steps 1 to 7 of [tutorial](https://www.cesm.ucar.edu/working-groups/climate/simulations/cesm2-pacific-pacemaker/instructions) to finish the 1st step of flux adjustment. I’ve also included my [source codes](https://github.com/jingyizhuo/CESM2-FA/tree/main/code/cesm2fa_step1) here, but they are identical to the original version provided in the [tutorial](https://www.cesm.ucar.edu/working-groups/climate/simulations/cesm2-pacific-pacemaker/instructions).
 
-After completing the SST nudging simulations, the model output is compared to observations to calculate the climatological momentum flux terms (taux_adj, tauy_adj), defined as the monthly climatological differences in zonal and meridional wind stress between ERA5 and the simulations.
+After completing the SST nudging simulations, the model output is compared to observations to calculate the climatological momentum flux terms (taux_adj, tauy_adj), defined as the monthly climatological differences in zonal and meridional wind stress between ERA5 and the simulations. 
 
 ### 2️⃣ Step 2: Add wind stress adjustment while applying SST nudging, and save ```SST_ADJUST```
+
+With TAU_ADJUST applied in CESM2, the model will evolve toward a new mean climatological state. Step 2 aim to obtain the climatological SST adjustment when TAU_ADJUST is applied. 
+
+Assuming your TAU_ADJUST data have been saved at /my/cesm2fa_data/tau/, then you will need to copy the necessary source code modifications into your POP SourceMods directory.
+Similar to Step 1, this involves modifying four POP Fortran source files: forcing_coupled.F90; forcing.F90; forcing_sfwf.F90; forcing_shf.90. In addition, you must update the POP namelist definitions file: namelist_definition_pop.xml. All these files can be found [here](https://github.com/jingyizhuo/CESM2-FA/tree/main/code/cesmfa_step2).
+
+
+
