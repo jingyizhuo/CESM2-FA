@@ -20,7 +20,7 @@ Assuming your ```TAU_ADJUST``` data from Step 1 have been saved at */my/cesm2fa_
 Unlike in Step 1, where the wind stress adjustments are diagnosed after completing the simulation, ```SST_ADJUST``` is calculated by taking the climatological mean of the SST nudging tendency term (```HEAT_F```) saved during the model run. ```HEAT_F``` is not a default output of POP, I've modify ```forcing_coupled.F90``` accordingly to save this variable. Just make sure to include ```HEAT_F``` in your ```gx1v7_tavg_contents``` file to ensure it is properly written to the output.
 
 
-### 3️⃣ Step 3: Apply both ```TAU_ADJ``` and ```SST_ADJ``` to get the CESM2-FA
+### 3️⃣ Step 3: Apply both ```TAU_ADJUST``` and ```SST_ADJUST``` to get the CESM2-FA
 
 Now, with the derived wind stress and sst adjustments, you will also need to modify your source codes, namelists and xml parameters, then finally build and submit your case as normal. 
 
