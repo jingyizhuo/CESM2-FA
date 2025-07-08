@@ -13,8 +13,7 @@ In my case, I followed the [CESM2 Pacemaker Tutorial](https://www.cesm.ucar.edu/
 
 After completing the SST nudging simulations, the model output is compared to observations to calculate the climatological momentum flux terms (taux_adj, tauy_adj), defined as the monthly climatological differences in zonal and meridional wind stress between ERA5 and the simulations. 
 
-·······················································································································································································
-
+---
 
 ### 2️⃣ Step 2: Add wind stress adjustment while applying SST nudging, and save ```SST_ADJUST```
 
@@ -24,8 +23,7 @@ Assuming your ```TAU_ADJUST``` data from Step 1 have been saved at */my/cesm2fa_
 
 Unlike in Step 1, where the wind stress adjustments are diagnosed after completing the simulation, ```SST_ADJUST``` is calculated by taking the climatological mean of the SST nudging tendency term (```HEAT_F```) saved during the model run. ```HEAT_F``` is not a default output of POP, I've modify ```forcing_coupled.F90``` accordingly to save this variable. Just make sure to include ```HEAT_F``` in your ```gx1v7_tavg_contents``` file to ensure it is properly written to the output.
 
-·······················································································································································································
-
+---
 
 ### 3️⃣ Step 3: Apply both ```TAU_ADJUST``` and ```SST_ADJUST``` to get the CESM2-FA
 
