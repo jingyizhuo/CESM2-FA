@@ -9,8 +9,4 @@ The first step is to apply SST nudging or the pacemaker technique. This allows y
 
 In my case, I followed the [CESM2 Pacemaker Tutorial](https://www.cesm.ucar.edu/working-groups/climate/simulations/cesm2-pacific-pacemaker/instructions) to implement SST nudging. The [tutorial](https://www.cesm.ucar.edu/working-groups/climate/simulations/cesm2-pacific-pacemaker/instructions) provides guidance on how to generate a custom nudging mask. In our JCL2025 paper, we applied SST nudging over the entire tropical band (30°S–30°N), you can define your own nudging region based on your specific research goals. Then you will need to prepare the SST forcing data, apply source code modifications, set up POP namelist, and then set up and build your case. Please just follow the steps 1 to 7 of [tutorial](https://www.cesm.ucar.edu/working-groups/climate/simulations/cesm2-pacific-pacemaker/instructions) to finish the 1st step of flux adjustment.
 
-Here I also attach the [source codes](https://github.com/jingyizhuo/CESM2-FA/tree/main/code) which are the same as the one used in the [tutorial](https://www.cesm.ucar.edu/working-groups/climate/simulations/cesm2-pacific-pacemaker/instructions).
-
-
-
-
+I’ve also included the [source codes](https://github.com/jingyizhuo/CESM2-FA/tree/main/code) used in my github, but they are identical to the original version provided in the [tutorial](https://www.cesm.ucar.edu/working-groups/climate/simulations/cesm2-pacific-pacemaker/instructions).
