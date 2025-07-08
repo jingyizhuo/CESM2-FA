@@ -15,14 +15,14 @@ After completing the SST nudging simulations, the model output is compared to ob
 
 With ```TAU_ADJUST``` applied in CESM2, the model will evolve toward a new mean climatological state. Step 2 aim to obtain the climatological SST adjustment when ```TAU_ADJUST``` is applied. 
 
-Assuming your ```TAU_ADJUST``` data from Step 1 have been saved at /my/cesm2fa_data/tau/, then you will need to copy the necessary source code modifications into your POP SourceMods directory. Similar to Step 1, this involves modifying four POP Fortran source files: ```forcing_coupled.F90```; ```forcing.F90```; ```forcing_sfwf.F90```; ```forcing_shf.90```. In addition, you must update the POP namelist definitions file: ```namelist_definition_pop.xml```. All these files can be at [cesm2fa_step2](https://github.com/jingyizhuo/CESM2-FA/tree/main/code/cesm2fa_step2).
+Assuming your ```TAU_ADJUST``` data from Step 1 have been saved at */my/cesm2fa_data/tau/*, then you will need to copy the necessary source code modifications into your POP SourceMods directory. Similar to Step 1, this involves modifying four POP Fortran source files: ```forcing_coupled.F90```; ```forcing.F90```; ```forcing_sfwf.F90```; ```forcing_shf.90```. In addition, you must update the POP namelist definitions file: ```namelist_definition_pop.xml```. All these files can be at [cesm2fa_step2](https://github.com/jingyizhuo/CESM2-FA/tree/main/code/cesm2fa_step2).
 
 Unlike in Step 1, where the wind stress adjustments are diagnosed after completing the simulation, ```SST_ADJUST``` is calculated by taking the climatological mean of the SST nudging tendency term (```HEAT_F```) saved during the model run. ```HEAT_F``` is not a default output of POP, I've modify ```forcing_coupled.F90``` accordingly to save this variable. Just make sure to include ```HEAT_F``` in your ```gx1v7_tavg_contents``` file to ensure it is properly written to the output.
 
 
 ### 3️⃣ Step 3: Apply both ```TAU_ADJ``` and ```SST_ADJ``` to get the CESM2-FA
 
-With the derived wind stress adjustment (```TAU_ADJUST```) and sst adjustment data (```SST_ADJUST```) that fit for your model, now you can run the fully coupled GCM simulations with surface adjustment. Assuming your flux adjustments are saved at /my/cesm2fa_data/tau/ and /my/cesm2fa_data/heat_f/, then you will need to modify the POP Fortran source files according to the files saved at [cesm2fa_step3](https://github.com/jingyizhuo/CESM2-FA/tree/main/code/cesm2fa_step3).
+With the derived wind stress adjustment (```TAU_ADJUST```) and sst adjustment data (```SST_ADJUST```) that fit for your model, now you can run the fully coupled GCM simulations with surface adjustment. Assuming your flux adjustments are saved at */my/cesm2fa_data/tau/* and */my/cesm2fa_data/heat_f/*, then you will need to modify the POP Fortran source files according to the files saved at [cesm2fa_step3](https://github.com/jingyizhuo/CESM2-FA/tree/main/code/cesm2fa_step3).
 
 
 
