@@ -3,7 +3,7 @@
 
 This page describes how to set up surface flux adjustment experiments using the fully coupled CESM2 as an example. The source code modifications provided here are specific to CESM2. If you wish to apply flux adjustments to CESM1 or other GCMs, the overall logic remains the same, but you will need to implement your own version of the source code modifications.
 
-### 1️⃣ Step 1: Apply SST nudging, and save ```taux_adj```, bash```taux_adj```
+### 1️⃣ Step 1: Apply SST nudging, and save ```taux_adj```, ```taux_adj```
 
 The first step is to apply SST nudging or the pacemaker technique. This allows you to diagnose and save the surface wind stress adjustments (bash```taux_adj``` and bash```tauy_adj```) needed for correcting surface momentum fluxes.
 
